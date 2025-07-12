@@ -1,344 +1,228 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hangi Demon Slayer Hashira'sın?</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangi Hashira'sın? - Profesyonel Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(120deg, #1e1e2f, #000000);
+      color: #fff;
+      overflow-x: hidden;
+    }body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1615033361675-fd831c9f4ef5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
 
-  body {
-    margin: 0; padding: 0;
-    background: linear-gradient(135deg, #1e1e1e 0%, #0d0d0d 100%);
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  #quiz-container {
-    background: #121212;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #ff4500aa;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px 40px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  h1 {
-    font-family: 'Orbitron', monospace;
-    text-align: center;
-    color: #ff4500;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px #ff4500;
-  }
-  .question-block {
-    margin-bottom: 25px;
-    animation: fadeIn 0.6s ease forwards;
-  }
-  .question {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #ffa07a;
-    text-shadow: 0 0 5px #ff4500bb;
-  }
-  .answers {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .answers li {
-    margin: 10px 0;
-  }
-  .answers label {
-    display: block;
-    background: #222;
-    padding: 10px 15px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    user-select: none;
-    box-shadow: inset 0 0 3px #ff4500aa;
-  }
-  .answers input[type="radio"] {
-    display: none;
-  }
-  .answers input[type="radio"]:checked + label {
-    background: #ff4500;
-    color: white;
-    box-shadow: 0 0 15px #ff4500cc;
-  }
-  .answers label:hover {
-    background: #ff6e00;
-    color: white;
-  }
-  button#submit-btn {
-    width: 100%;
-    padding: 14px 0;
-    border: none;
-    background: #ff4500;
-    color: white;
-    font-size: 1.15rem;
-    font-weight: 700;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #ff4500cc;
-    transition: background 0.3s;
-  }
-  button#submit-btn:hover:not(:disabled) {
-    background: #e03e00;
-  }
-  button#submit-btn:disabled {
-    background: #aa3300;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-  #result {
-    margin-top: 30px;
-    font-size: 1.3rem;
-    text-align: center;
-    padding: 20px;
-    background: #330000cc;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #ff450099;
-    user-select: none;
-    min-height: 5em;
-  }
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(15px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-  footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #555;
-    font-size: 0.9rem;
-    user-select: none;
-  }
-  @media (max-width: 520px) {
-    #quiz-container {
-      padding: 25px 20px 30px;
-      width: 95%;
-    }
-    .question {
-      font-size: 1.1rem;
-    }
-  }
-</style>
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px #ff4500aa;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: #ff7043;
+  text-shadow: 0 0 8px #ff5722;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255, 100, 50, 0.4);
+}
+
+.question {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 5px solid #ff7043;
+  background: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000044;
+}
+
+.question h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #ffc4b3;
+}
+
+.options label {
+  display: block;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.options input[type="radio"]:checked + label {
+  background: #ff5722;
+  color: #fff;
+  border: 1px solid #ffa07a;
+  box-shadow: 0 0 15px #ff5722;
+}
+
+.options label:hover {
+  background: #333;
+}
+
+#submit {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #ff7043;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 0 15px #ff7043aa;
+  transition: background 0.3s ease;
+}
+
+#submit:hover {
+  background: #ff5722;
+}
+
+#result {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff4500aa;
+}
+
+#result img {
+  max-width: 200px;
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 0 10px #ff7043cc;
+}
+
+  </style>
 </head>
-<body>
+<body>  <header>
+    <h1>Sen Hangi Hashira'sın?</h1>
+    <p>Demon Slayer evreninde seni hangi sütun temsil ediyor?</p>
+  </header>  <div class="container" id="quiz-container">
+    <!-- Sorular JavaScript ile yüklenecek -->
+    <form id="quiz-form"></form>
+    <button id="submit" disabled>Sonucu Göster</button>
+    <div id="result"></div>
+  </div>  <script>
+    const quizData = [
+      {
+        question: "Boş zamanlarında ne yaparsın?",
+        options: [
+          { text: "Meditasyon", hashira: "Gyomei" },
+          { text: "Egzersiz / Spor", hashira: "Tengen" },
+          { text: "Kitap okurum", hashira: "Giyu" },
+          { text: "Tatlı yerim", hashira: "Mitsuri" },
+          { text: "Kamp yaparım", hashira: "Rengoku" }
+        ]
+      },
+      // Ek sorular buraya
+    ];
 
-<div id="quiz-container" role="main" aria-labelledby="quizTitle">
-  <h1 id="quizTitle">Sen Hangi Demon Slayer Hashira'sın?</h1>
-  <div id="quiz"></div>
-  <button id="submit-btn" disabled>Testi Bitir ve Sonucu Gör</button>
-  <div id="result" aria-live="polite"></div>
-</div>
-
-<footer>
-  &copy; 2025 Yns Quiz &nbsp; | &nbsp; Anime Eğlencesi
-</footer>
-
-<script>
-  // Hashira isimleri ve açıklamaları
-  const hashiraInfo = {
-    "Giyu Tomioka": {
-      desc: "Sen Su Sütunu Giyu Tomioka'sın! Soğukkanlı, sessiz ama kararlı bir savaşçısın. Zorlu koşullarda bile dimdik durmayı başarıyorsun.",
-      img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/06/Giyu_Tomioka_Profile.png"
-    },
-    "Kyojuro Rengoku": {
-      desc: "Sen Alev Sütunu Kyojuro Rengoku'sun! Tutkulu, cesur ve neşeli ruhunla herkesi etkiliyorsun. Enerjinle etrafını aydınlatıyorsun!",
-      img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/f/f3/Kyojuro_Rengoku_Anime.png"
-    },
-    "Gyomei Himejima": {
-      desc: "Sen Taş Sütunu Gyomei Himejima'sın! Güçlü, sakin ve adaletli kişiliğinle etrafına güven veriyorsun. En büyük Hashira olma yolundasın!",
-      img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/d/d4/Gyomei_Himejima_Anime.png"
-    },
-    "Tengen Uzui": {
-      desc: "Sen Ses Sütunu Tengen Uzui'sin! Gösterişli, enerjik ve neşeli yapınla dikkat çekiyorsun. Görevlerini her zaman şovla yaparsın!",
-      img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/35/Tengen_Uzui_Profile.png"
-    },
-    "Mitsuri Kanroji": {
-      desc: "Sen Aşk Sütunu Mitsuri Kanroji'sin! Sevgi dolu, enerjik ve güçlü kalbinle herkese ilham veriyorsun. Duygusal ama aynı zamanda çok cesursun!",
-      img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3d/Mitsuri_Kanroji_Profile.png"
-    }
-  };
-
-  // Sorular, her şık ilgili Hashira için puan veriyor
-  const quizData = [
-    {
-      question: "1. Kişiliğine en yakın olanı seç:",
-      options: [
-        {text:"Sakin ve soğukkanlı", hashira:"Giyu Tomioka"},
-        {text:"Enerjik ve tutkulu", hashira:"Kyojuro Rengoku"},
-        {text:"Güçlü ve güvenilir", hashira:"Gyomei Himejima"},
-        {text:"Gösterişli ve neşeli", hashira:"Tengen Uzui"},
-        {text:"Sevgi dolu ve duygusal", hashira:"Mitsuri Kanroji"},
-      ]
-    },
-    {
-      question: "2. Dövüş stilin nasıl?",
-      options: [
-        {text:"Hızlı ve etkili", hashira:"Giyu Tomioka"},
-        {text:"Alev gibi güçlü ve cesur", hashira:"Kyojuro Rengoku"},
-        {text:"Güçlü darbelerle yıkıcı", hashira:"Gyomei Himejima"},
-        {text:"Gösterişli ve akrobatik", hashira:"Tengen Uzui"},
-        {text:"Çevik ve esnek", hashira:"Mitsuri Kanroji"},
-      ]
-    },
-    {
-      question: "3. En çok değer verdiğin şey nedir?",
-      options: [
-        {text:"Adalet ve görev", hashira:"Gyomei Himejima"},
-        {text:"Aile ve arkadaşlar", hashira:"Mitsuri Kanroji"},
-        {text:"Onur ve disiplin", hashira:"Giyu Tomioka"},
-        {text:"Neşe ve eğlence", hashira:"Tengen Uzui"},
-        {text:"Tutku ve azim", hashira:"Kyojuro Rengoku"},
-      ]
-    },
-    {
-      question: "4. Zor bir durumda nasıl tepki verirsin?",
-      options: [
-        {text:"Soğukkanlı kalır, strateji yaparım", hashira:"Giyu Tomioka"},
-        {text:"Cesurca atılır, liderlik ederim", hashira:"Kyojuro Rengoku"},
-        {text:"Güç kullanır, korurum", hashira:"Gyomei Himejima"},
-        {text:"Hafifçe şov yaparım ama ciddiyim", hashira:"Tengen Uzui"},
-        {text:"Sevgiyle yaklaşır, moral veririm", hashira:"Mitsuri Kanroji"},
-      ]
-    },
-    {
-      question: "5. Favori renk hangisi?",
-      options: [
-        {text:"Mavi ve lacivert", hashira:"Giyu Tomioka"},
-        {text:"Alev kırmızısı", hashira:"Kyojuro Rengoku"},
-        {text:"Gri ve toprak tonları", hashira:"Gyomei Himejima"},
-        {text:"Altın ve parlak renkler", hashira:"Tengen Uzui"},
-        {text:"Pembe ve açık renkler", hashira:"Mitsuri Kanroji"},
-      ]
-    }
-  ];
-
-  const quizEl = document.getElementById('quiz');
-  const submitBtn = document.getElementById('submit-btn');
-  const resultEl = document.getElementById('result');
-
-  // Kullanıcı seçimlerini tutacak
-  let userScores = {
-    "Giyu Tomioka": 0,
-    "Kyojuro Rengoku": 0,
-    "Gyomei Himejima": 0,
-    "Tengen Uzui": 0,
-    "Mitsuri Kanroji": 0
-  };
-
-  function loadQuiz() {
-    quizData.forEach((q, i) => {
-      const block = document.createElement('div');
-      block.className = 'question-block';
-
-      let answersHTML = '<ul class="answers">';
-      q.options.forEach((opt, j) => {
-        answersHTML += `
-          <li>
-            <input type="radio" id="q${i}_opt${j}" name="q${i}" value="${opt.hashira}" />
-            <label for="q${i}_opt${j}">${opt.text}</label>
-          </li>
-        `;
-      });
-      answersHTML += '</ul>';
-
-      block.innerHTML = `<div class="question">${q.question}</div>` + answersHTML;
-      quizEl.appendChild(block);
-    });
-  }
-
-  // Tüm sorular cevaplandı mı kontrol
-  function allAnswered() {
-    for(let i=0; i < quizData.length; i++) {
-      if (!document.querySelector(`input[name="q${i}"]:checked`)) return false;
-    }
-    return true;
-  }
-
-  // Buton aktiflik durumu güncelle
-  function updateButton() {
-    submitBtn.disabled = !allAnswered();
-    if (!submitBtn.disabled) {
-      resultEl.textContent = '';
-    }
-  }
-
-  // Puanları hesapla ve sonucu bul
-  function calculateResult() {
-    // Önce puanları sıfırla
-    for(let key in userScores) userScores[key] = 0;
-
-    for(let i=0; i < quizData.length; i++) {
-      const selected = document.querySelector(`input[name="q${i}"]:checked`);
-      if(selected) {
-        userScores[selected.value]++;
+    const hashiraInfo = {
+      Giyu: {
+        name: "Giyu Tomioka",
+        desc: "Soğukkanlı ve kararlısın. Su gibi akıllı ve dengelisin.",
+        img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/06/Giyu_Tomioka_Profile.png"
+      },
+      Rengoku: {
+        name: "Kyojuro Rengoku",
+        desc: "Enerjik ve cesursun. Alevler kadar tutkulu bir yüreğin var!",
+        img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/f/f3/Kyojuro_Rengoku_Anime.png"
+      },
+      Mitsuri: {
+        name: "Mitsuri Kanroji",
+        desc: "Tatlı ve sevgi dolu bir kalbin var. Güzellik ve güç sende birleşmiş!",
+        img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3d/Mitsuri_Kanroji_Profile.png"
+      },
+      Tengen: {
+        name: "Tengen Uzui",
+        desc: "Gösteriş senin işin! Ama altında büyük bir sadakat yatıyor.",
+        img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/35/Tengen_Uzui_Profile.png"
+      },
+      Gyomei: {
+        name: "Gyomei Himejima",
+        desc: "Güçlü ve adilsin. Sessiz ama etkileyici bir varlıksın.",
+        img: "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/d/d4/Gyomei_Himejima_Anime.png"
       }
-    }
-    // En yüksek puanı alan Hashira'yı bul
-    let maxScore = 0;
-    let winner = '';
-    for(let key in userScores) {
-      if(userScores[key] > maxScore) {
-        maxScore = userScores[key];
-        winner = key;
-      }
-    }
-    return winner;
-  }
+    };
 
-  // Sonuç göster
-  function showResult() {
-    const winner = calculateResult();
-    const info = hashiraInfo[winner];
+    const quizForm = document.getElementById("quiz-form");
+    const submitBtn = document.getElementById("submit");
+    const resultDiv = document.getElementById("result");
 
-    quizEl.style.display = 'none';
-    submitBtn.style.display = 'none';
+    function buildQuiz() {
+      quizData.forEach((item, index) => {
+        const block = document.createElement("div");
+        block.className = "question";
 
-    resultEl.innerHTML = `
-      <h2>${winner}</h2>
-      <img src="${info.img}" alt="${winner}" style="max-width:200px; margin: 15px auto; display: block; border-radius: 15px; box-shadow: 0 0 15px #ff4500bb;" />
-      <p style="font-size:1.1rem; line-height:1.4; margin-top: 10px;">${info.desc}</p>
-      <button id="restart-btn" style="margin-top:25px; padding:12px 20px; border:none; border-radius:12px; background:#ff4500; color:#fff; font-weight:700; cursor:pointer; box-shadow: 0 0 15px #ff4500cc;">Tekrar Dene</button>
-    `;
-
-    // Restart butonu olay
-    document.getElementById('restart-btn').addEventListener('click', () => {
-      location.reload();
-    });
-  }
-
-  // Dinleyiciler
-  function setupListeners() {
-    quizData.forEach((q, i) => {
-      const radios = document.querySelectorAll(`input[name="q${i}"]`);
-      radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-          updateButton();
+        let html = `<h3>${item.question}</h3><div class="options">`;
+        item.options.forEach((opt, i) => {
+          html += `
+            <input type="radio" id="q${index}_opt${i}" name="q${index}" value="${opt.hashira}" hidden>
+            <label for="q${index}_opt${i}">${opt.text}</label>
+          `;
         });
+        html += `</div>`;
+        block.innerHTML = html;
+        quizForm.appendChild(block);
       });
-    });
-  }
+    }
 
-  submitBtn.addEventListener('click', () => {
-    showResult();
-  });
+    function checkCompletion() {
+      const total = quizData.length;
+      let filled = 0;
+      for (let i = 0; i < total; i++) {
+        if (document.querySelector(`input[name="q${i}"]:checked`)) {
+          filled++;
+        }
+      }
+      submitBtn.disabled = (filled !== total);
+    }
 
-  window.onload = () => {
-    loadQuiz();
-    setupListeners();
-    updateButton();
-  };
-</script>
+    function calculateResult() {
+      let scores = { Giyu: 0, Rengoku: 0, Mitsuri: 0, Tengen: 0, Gyomei: 0 };
+      quizData.forEach((item, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) scores[selected.value]++;
+      });
+      let result = Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+      const info = hashiraInfo[result];
+      resultDiv.innerHTML = `
+        <h2>${info.name}</h2>
+        <img src="${info.img}" alt="${info.name}" />
+        <p>${info.desc}</p>
+      `;
+    }
 
-</body>
+    quizForm.addEventListener("change", checkCompletion);
+    submitBtn.addEventListener("click", calculateResult);
+
+    buildQuiz();
+  </script></body>
 </html>
